@@ -74,3 +74,12 @@ for ie in range(100):
     # lead 1
     energies.append(energy)
     data.append(smatrix.transmission(1, 0))
+# Plot it, to make sure it's OK
+kwant.plot(syst)
+# Use matplotlib to write output
+# We should see conductance steps
+plt.figure()
+plt.plot(energies, data)
+plt.xlabel("energy [t]")
+plt.ylabel("conductance [e^2/h]")
+plt.show()
